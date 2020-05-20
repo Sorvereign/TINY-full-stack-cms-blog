@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+
+import DashboardSignIn from "./components/DashboardComponents/SignIn";
+import Blog from "./components/BlogComponents";
+import Posts from "./components/BlogComponents/Posts";
+import Dashboard from "./components/DashboardComponents";
+
+import CreatePosts from "./components/DashboardComponents/CreatePosts";
+import EditPosts from "./components/DashboardComponents/EditPosts";
+import DeletePosts from "./components/DashboardComponents/DeletePosts";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <Route exact path="/" component={Blog} />
+      <Route path="/post/:id" component={Posts} />
+      <Route path="/sign" component={DashboardSignIn} />
+      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/create" component={CreatePosts} />
+      <Route path="/edit" component={EditPosts} />
+      <Route path="/delete" component={DeletePosts} />
+    </Switch>
   );
 }
 

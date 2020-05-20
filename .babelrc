@@ -1,0 +1,18 @@
+module.exports = {
+    plugins: [
+        [
+            "module-resolver",
+            {
+                alias: {
+                    "@components": "./src/components",
+                    "@blogComponents": "./src/components/BlogComponents",
+                    "@dashboardComponents": "./src/components/DashboardComponents",
+                    "@styles": "./src/styles",
+                    "@utils": "./src/utils",
+                    "@redux": "./src/redux",
+                    "@hoc": "./src/hoc",
+                }
+            }
+        ]
+    ]
+}
